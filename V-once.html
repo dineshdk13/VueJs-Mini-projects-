@@ -1,0 +1,31 @@
+<!--V-onece used to desable rerender. if i asaign some vale later it wont concider the changed value-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="Vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <p>{{ sayHello() }} -<a  v-bind:href="link">Google</a></p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                title:'Hello World',
+                link:'https://google.com'
+            },
+            methods: {
+                sayHello: function(){
+                    this.title='hello';
+                    return this.title;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

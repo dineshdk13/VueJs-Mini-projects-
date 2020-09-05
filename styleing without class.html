@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="Vue.js"></script>
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="exercise">
+        <div class="demo" :style="{backgroundColor: color}"></div>
+        <div class="demo" :style="myStyle"></div>
+        <br>
+        <input type="text" v-model="color">
+        <input type="text" v-model="w">
+        
+
+    </div>
+<script>
+    new Vue({
+        el: '#exercise',
+        data:{
+            addRed: false,
+            color: 'gray',
+            w:100
+            
+        },
+        computed:{
+            myStyle: function(){
+                return{
+                    backgroundColor:this.color,
+                    width: this.w+'px'
+                };
+            }
+        }
+    });
+</script>
+
+</body>
+</html> 

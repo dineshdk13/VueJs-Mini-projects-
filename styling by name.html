@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="Vue.js"></script>
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="exercise">
+        <div class="demo" @click="addRed = !addRed" :class="divclasses"></div>
+        <!-- <div class="demo" :class="{red:addRed}"></div> -->
+        <div class="demo":class="color"></div>
+        <hr>
+        <input type="text" v-model="color">
+        
+
+    </div>
+<script>
+    new Vue({
+        el: '#exercise',
+        data:{
+            addRed: false,
+            color: 'green'
+            
+        },
+        computed:{
+            divclasses: function(){
+                return{
+                    red:this.addRed,
+                    blue:!this.addRed
+                };
+            }
+        }
+    });
+</script>
+
+</body>
+</html> 

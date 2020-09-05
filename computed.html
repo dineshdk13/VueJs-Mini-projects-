@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="Vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="counter++">increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secounter++"> sec counter</button>
+    <p>counter:  {{counter}} | {{secounter}}</p>
+    <p>Result:  {{result()}} | {{output}}</p>
+
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            counter:0,
+            secounter:0
+        },
+        computed:{
+            output: function(){
+                console.log('computed output');
+                return this.secounter>5? 'greater then 5 ' : 'Lesser then 5';
+            }
+        },
+        methods: {
+            result:function(){
+                console.log('method result');
+                return this.counter>5? 'greater then 5 ' : 'Lesser then 5';
+            }
+        }
+    });
+</script>
+
+</body>
+</html> 
